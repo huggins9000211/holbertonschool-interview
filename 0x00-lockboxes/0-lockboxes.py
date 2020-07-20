@@ -11,6 +11,6 @@ def canUnlockAll(boxes):
                 if len(myBoxes) == 0:
                     return True
         avalBoxes.pop(0)
-        print(myBoxes)
-        print("*** {} ***".format(avalBoxes))
+        # print(myBoxes)
+        # print("*** {} ***".format(avalBoxes))
     return False
