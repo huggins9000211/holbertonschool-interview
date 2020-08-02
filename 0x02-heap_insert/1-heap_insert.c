@@ -9,20 +9,20 @@
  * Return: Always 0 (Success)
  */
 /*
-size_t binary_tree_nodes(const binary_tree_t *tree)
-{
-	int l;
-
-	if (!tree)
-		return (0);
-	if (!binary_tree_is_leaf(tree))
-		l = 1;
-	else
-		l = 0;
-	l = l + binary_tree_nodes(tree->left);
-	l = l + binary_tree_nodes(tree->right);
-	return (l);
-}
+*size_t binary_tree_nodes(const binary_tree_t *tree)
+*{
+	*int l;
+*
+	*if (!tree)
+	*	return (0);
+	*if (!binary_tree_is_leaf(tree))
+*		l = 1;
+*	else
+*		l = 0;
+*	l = l + binary_tree_nodes(tree->left);
+*	l = l + binary_tree_nodes(tree->right);
+*	return (l);
+*}
 */
 /**
  * binary_tree_node - Measures the height of a binary tree
@@ -34,26 +34,27 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	if (! *root)
-    {
-        heap_t *newH = binary_tree_node(NULL, value);
-        *root = newH;
-        return (newH);
-    }
-    else if (! (*root)->left)
-    {
-        heap_t *newH = binary_tree_node(*root, value);
-        (*root)->left = newH;
-        return (newH);
-    }
-    else if (! (*root)->right)
-    {
-        heap_t *newH = binary_tree_node(*root, value);
-        (*root)->right = newH;
-        return (newH);
-    }
-    return NULL;
-    /* size_t rDebth = binary_tree_nodes((*root)->right);
-    size_t lDebth = binary_tree_nodes((*root)->left);
-    */
+	if (!*root)
+	{
+		heap_t *newH = binary_tree_node(NULL, value);
+		*root = newH;
+		return (newH);
+	}
+	else if (!(*root)->left)
+	{
+		heap_t *newH = binary_tree_node(*root, value);
+		(*root)->left = newH;
+		return (newH);
+	}
+	else if (!(*root)->right)
+	{
+		heap_t *newH = binary_tree_node(*root, value);
+		(*root)->right = newH;
+		return (newH);
+	}
+	return (NULL);
+	/*
+	*size_t rDebth = binary_tree_nodes((*root)->right);
+	*size_t lDebth = binary_tree_nodes((*root)->left);
+	*/
 }
