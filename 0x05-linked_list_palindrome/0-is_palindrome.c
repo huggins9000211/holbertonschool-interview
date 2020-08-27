@@ -33,6 +33,8 @@ int is_palindrome(listint_t **head)
 {
     listint_t *fast;
     listint_t *slow;
+    listint_t *shh;
+    listint_t *fhh;
 
     if (*head == NULL)
     {
@@ -47,8 +49,9 @@ int is_palindrome(listint_t **head)
         slow = slow->next;
     }
     slow = slow->next;
-    listint_t *shh = reverse(slow);
-    listint_t *fhh = *head;
+    shh = reverse(slow);
+
+    fhh = *head;
 
     while (shh != NULL && fhh != NULL)
     {
