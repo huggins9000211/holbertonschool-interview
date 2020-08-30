@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
+#/usr/bin/env python
 import sys
 from collections import OrderedDict
 import signal
