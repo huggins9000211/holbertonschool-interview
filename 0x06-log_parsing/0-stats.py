@@ -1,13 +1,10 @@
 #!/usr/bin/python3
 import sys
-from collections import OrderedDict
 
 size = 0
 count = 0
-codes = {'200': 0, '500': 0, '301': 0, '400': 0,
-         '401': 0, '404': 0, '403': 0, '405': 0}
-codes = OrderedDict(sorted(codes.items(), key=lambda t: t[0]))
-
+codes = {'200': 0, '301': 0, '400': 0,
+         '401': 0, '403': 0, '404': 0, '405': 0, '500': 0}
 
 for x in sys.stdin:
     myStr = x[::-1]
