@@ -45,8 +45,5 @@ avl_t *recur(int *array, int start, int end)
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-	int start = 0;
-	int end = size - 1;
-
-	return (recur(array, start, end));
+	return (recur(array, 0, size - 1));
 }
