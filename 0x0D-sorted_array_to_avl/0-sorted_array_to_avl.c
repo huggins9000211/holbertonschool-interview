@@ -14,7 +14,7 @@
 avl_t *recur(int *array, int start, int end)
 {
 	int mid;
-	avl_t *node = malloc(sizeof(binary_tree_t));
+	avl_t *node = malloc(sizeof(avl_t));
 
 	if (!node)
 		return (NULL);
@@ -26,8 +26,15 @@ avl_t *recur(int *array, int start, int end)
 	mid = (start + end) / 2;
 
 	node->n = array[mid];
+	node->left = NULL;
+	node->right = NULL;
+	node->parent = NULL;
 	node->left = recur(array, start, mid - 1);
+	if (node->left)
+		node->left->parent = node;
 	node->right = recur(array, mid + 1, end);
+	if (node->right)
+		node->right->parent = node;
 	return (node);
 }
 
