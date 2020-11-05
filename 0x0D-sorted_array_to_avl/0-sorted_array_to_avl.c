@@ -14,15 +14,17 @@
 avl_t *recur(int *array, int start, int end)
 {
 	int mid;
-	avl_t *node = malloc(sizeof(avl_t));
-
-	if (!node)
-		return (NULL);
+	avl_t *node;
 
 	if (start > end)
 	{
 		return (NULL);
 	}
+
+	node = malloc(sizeof(avl_t));
+	if (!node)
+		return (NULL);
+
 	mid = (start + end) / 2;
 
 	node->n = array[mid];
