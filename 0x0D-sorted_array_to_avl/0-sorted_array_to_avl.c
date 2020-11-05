@@ -11,7 +11,7 @@
  *
  * Return: The height of the tree starting at @node
  */
-avl_t *recur(int *array, int start, int end)
+avl_t *recur(int *array, int start, int end, int st)
 {
 	int mid;
 	avl_t *node;
@@ -30,10 +30,12 @@ avl_t *recur(int *array, int start, int end)
 	node->n = array[mid];
 	node->left = NULL;
 	node->right = NULL;
-	node->left = recur(array, start, mid - 1);
+	if (st == 1)
+		node->parent = NULL;
+	node->left = recur(array, start, mid - 1, 0);
 	if (node->left)
 		node->left->parent = node;
-	node->right = recur(array, mid + 1, end);
+	node->right = recur(array, mid + 1, end, 0);
 	if (node->right)
 		node->right->parent = node;
 	return (node);
@@ -49,5 +51,5 @@ avl_t *recur(int *array, int start, int end)
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-	return (recur(array, 0, size - 1));
+	return (recur(array, 0, size - 1, 1));
 }
