@@ -28,6 +28,8 @@ avl_t *recur(int *array, int start, int end)
 	mid = (start + end) / 2;
 
 	node->n = array[mid];
+	node->left = NULL;
+	node->right = NULL;
 	node->left = recur(array, start, mid - 1);
 	if (node->left)
 		node->left->parent = node;
