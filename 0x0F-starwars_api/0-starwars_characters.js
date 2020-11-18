@@ -14,13 +14,13 @@ function doRequest (url) {
   });
 }
 // hi
-var chars;
+let chars;
 request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}`, async function (error, response, body) {
   if (error) {
     console.error('error:', error);
   }
   chars = JSON.parse(body).characters;
-  var x;
+  let x;
   if (chars) {
     for (x of chars) {
       await doRequest(x);
