@@ -27,11 +27,7 @@ int binarySearch(int arr[], int l, int r, int x)
 		{
 			if (arr[mid - 1] == x)
 			{
-				r = mid;
-				l = mid;
-				while (arr[l - 1] == x)
-					l--;
-				return (binarySearch(arr, l, r, x));
+				return (binarySearch(arr, mid-1, mid, x));
 			}
 			return (mid);
 		}
