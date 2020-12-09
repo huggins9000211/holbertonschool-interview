@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "search_algos.h"
 
+/**
+ * printArr - check the code for Holberton School students.
+ *
+ * @array: test
+ * @i1: test
+ * @i2: test
+ * Return: Always 0.
+ */
 void printArr(int *array, int i1, int i2)
 {
 	int use = 0;
@@ -22,6 +30,15 @@ void printArr(int *array, int i1, int i2)
 		printf("\n");
 }
 
+/**
+ * indexHelper - check the code for Holberton School students.
+ *
+ * @arr: test
+ * @i: test
+ * @x: test
+ * @start: test
+ * Return: Always 0.
+ */
 int indexHelper(int *arr, int i, int x, int start)
 {
 	if (start == 1)
@@ -33,15 +50,19 @@ int indexHelper(int *arr, int i, int x, int start)
 	}
 	printf("%x\n", x);
 	return (i);
-	
 }
 
+/**
+ * binarySearch - check the code for Holberton School students.
+ *
+ * @arr: test
+ * @l: test
+ * @r: test
+ * @x: test
+ * Return: Always 0.
+ */
 int binarySearch(int arr[], int l, int r, int x)
 {
-	/*
-	if ((r - l == 0) && (arr[r] != x))
-	return (-1);
-	*/
 	if (r >= l)
 	{
 		int mid;
@@ -53,7 +74,7 @@ int binarySearch(int arr[], int l, int r, int x)
 		if (arr[mid] == x)
 		{
 			if (arr[mid - 1] == x)
-				return(indexHelper(arr, mid, x, 1));
+				return (indexHelper(arr, mid, x, 1));
 			return (mid);
 		}
 		if (arr[mid] > x)
@@ -63,6 +84,14 @@ int binarySearch(int arr[], int l, int r, int x)
 	return (-1);
 }
 
+/**
+ * advanced_binary - check the code for Holberton School students.
+ *
+ * @array: test
+ * @size: test
+ * @value: test
+ * Return: Always 0.
+ */
 int advanced_binary(int *array, size_t size, int value)
 {
 	int result;
