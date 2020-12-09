@@ -2,6 +2,25 @@
 #include <stdlib.h>
 #include "search_algos.h"
 
+void printArr(int *array, int i1, int i2)
+{
+	int use = 0;
+
+	if (i1 <= i2)
+	{
+		printf("Searching in array: ");
+		use = 1;
+	}
+	while (i1 <= i2)
+	{
+		printf("%d", array[i1]);
+		if (i1 != i2)
+			printf(", ");
+		i1++;
+	}
+	if (use)
+		printf("\n");
+}
 
 int indexHelper(int *arr, int i, int x, int start)
 {
@@ -19,23 +38,16 @@ int indexHelper(int *arr, int i, int x, int start)
 
 int binarySearch(int arr[], int l, int r, int x)
 {
+	/*
 	if ((r - l == 0) && (arr[r] != x))
-		return (-1);
+	return (-1);
+	*/
 	if (r >= l)
 	{
-		int i;
 		int mid;
 
-		i = l;
 		printf("Searching in array: ");
-		while (i <= r)
-		{
-			if (i == r)
-				printf("%d\n", arr[r]);
-			else
-				printf("%d, ", arr[i]);
-			i++;
-		}
+		printArr(arr, l, r);
 		mid = l + (r - l) / 2;
 
 		if (arr[mid] == x)
