@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+10 rain
+"""
 def rain(walls):
+    """
+    rain function
+    """
     ans = 0
     size = len(walls)
     leftMax = [None] * size
