@@ -2,6 +2,8 @@
 """
 10 rain
 """
+
+
 def rain(walls):
     """
     rain function
