@@ -9,8 +9,9 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
-void heapify(int arr[], int n, int i)
+void heapify(int arr[], int n, int i, int size)
 {
+    
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -24,8 +25,8 @@ void heapify(int arr[], int n, int i)
     if (largest != i)
     {
         swap(&arr[i], &arr[largest]);
-        
-        heapify(arr, n, largest);
+        print_array(arr, size);
+        heapify(arr, n, largest, size);
     }
 }
 
@@ -35,15 +36,14 @@ void heap_sort(int *array, size_t size)
 
     for (i = size / 2 - 1; i >= 0; i--)
     {
-        print_array(array, size);
-        heapify(array, size, i);
+        heapify(array, size, i, size);
     }
 
     for (i = size - 1; i >= 0; i--)
     {
         swap(&array[0], &array[i]);
         print_array(array, size);
-        heapify(array, i, 0);
+        heapify(array, i, 0, size);
     }
 }
 
