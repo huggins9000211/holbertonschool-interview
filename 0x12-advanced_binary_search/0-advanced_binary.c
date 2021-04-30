@@ -19,46 +19,23 @@ void printArr(int *array, int i1, int i2)
 		printf("Searching in array: ");
 		use = 1;
 	}
-    if (i1 == i2)
-    {
-        printf("%d", array[i1]);
-    }
-    else
-    {
-    	while (i1 <= i2)
-    	{
+	if (i1 == i2)
+	{
+		printf("%d", array[i1]);
+	}
+	else
+	{
+		while (i1 <= i2)
+		{
 
-    		printf("%d", array[i1]);
-    		if (i1 != i2)
-    			printf(", ");
-    		i1++;
-    	}
-    }
+			printf("%d", array[i1]);
+			if (i1 != i2)
+				printf(", ");
+			i1++;
+		}
+	}
 	if (use)
 		printf("\n");
-}
-
-/**
- * indexHelper - check the code for Holberton School students.
- *
- * @arr: test
- * @i: test
- * @x: test
- * @start: test
- * Return: Always 0.
- */
-int indexHelper(int *arr, int i, int x, int start)
-{
-	if (start == 1)
-		printf("Searching in array: ");
-	if (arr[i - 1] == x)
-	{
-
-		printf("%d**, ", x);
-		return (indexHelper(arr, i - 1, x, 0));
-	}
-	printf("%x $$\n", x);
-	return (i);
 }
 
 /**
