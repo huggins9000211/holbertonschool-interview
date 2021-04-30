@@ -19,13 +19,21 @@ void printArr(int *array, int i1, int i2)
 		printf("Searching in array: ");
 		use = 1;
 	}
-	while (i1 <= i2)
-	{
-		printf("%d", array[i1]);
-		if (i1 != i2)
-			printf(", ");
-		i1++;
-	}
+    if (i1 == i2)
+    {
+        printf("%d", array[i1]);
+    }
+    else
+    {
+    	while (i1 <= i2)
+    	{
+
+    		printf("%d", array[i1]);
+    		if (i1 != i2)
+    			printf(", ");
+    		i1++;
+    	}
+    }
 	if (use)
 		printf("\n");
 }
@@ -41,13 +49,16 @@ void printArr(int *array, int i1, int i2)
  */
 int indexHelper(int *arr, int i, int x, int start)
 {
+    printf("Searching in array: ");
 	if (start == 1)
 		printf("Searching in array: ");
 	if (arr[i - 1] == x)
 	{
+        printf("$$$$$$$: ");
 		printf("%d, ", x);
 		return (indexHelper(arr, i - 1, x, 0));
 	}
+    printf("******: ");
 	printf("%x\n", x);
 	return (i);
 }
@@ -67,7 +78,6 @@ int binarySearch(int arr[], int l, int r, int x)
 	{
 		int mid;
 
-		printf("Searching in array: ");
 		printArr(arr, l, r);
 		mid = l + (r - l) / 2;
 
