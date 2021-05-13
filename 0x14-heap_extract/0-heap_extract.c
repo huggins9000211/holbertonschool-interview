@@ -21,6 +21,8 @@ void fixHeap(heap_t *node)
 	}
 	else if (node->left)
 		largest = node->left;
+    else
+        return;
 	if (largest && largest->n > node->n)
 	{
 		temp = largest->n;
