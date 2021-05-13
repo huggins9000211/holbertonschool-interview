@@ -10,6 +10,7 @@ void fixHeap(heap_t *node)
 {
 	heap_t *largest = NULL;
 	int temp;
+        
 
 	if (node->right)
 	{
@@ -20,7 +21,6 @@ void fixHeap(heap_t *node)
 	}
 	else if (node->left)
 		largest = node->left;
-
 	if (largest && largest->n > node->n)
 	{
 		temp = largest->n;
@@ -82,7 +82,6 @@ int heap_extract(heap_t **root)
 
 	if (!*root)
 		return (0);
-
 	if (!(*root)->left && !(*root)->right)
 	{
 		deleted = (*root)->n;
