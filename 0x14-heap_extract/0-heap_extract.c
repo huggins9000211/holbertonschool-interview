@@ -6,9 +6,9 @@
  * fixHeap - test
  * @node: test
  */
-void fixHeap(binary_tree_t *node)
+void fixHeap(heap_t *node)
 {
-	binary_tree_t *largest = NULL;
+	heap_t *largest = NULL;
 	int temp;
 
 	if (node->right)
@@ -34,7 +34,7 @@ void fixHeap(binary_tree_t *node)
  * @node: test
  * Return: test
  */
-int getHeight(binary_tree_t *node)
+int getHeight(heap_t *node)
 {
 	int l, r;
 
@@ -53,10 +53,10 @@ int getHeight(binary_tree_t *node)
  * @node: test
  * Return: test
  */
-binary_tree_t *getLast(int height, int helper, binary_tree_t *node)
+heap_t *getLast(int height, int helper, heap_t *node)
 {
-	binary_tree_t *left;
-	binary_tree_t *right;
+	heap_t *left;
+	heap_t *right;
 
 	if (helper != height)
 	{
@@ -74,9 +74,9 @@ binary_tree_t *getLast(int height, int helper, binary_tree_t *node)
  * @root: test
  * Return: test
  */
-int heap_extract(binary_tree_t **root)
+int heap_extract(heap_t **root)
 {
-	binary_tree_t *last;
+	heap_t *last;
 	int deleted;
     int height;
 
