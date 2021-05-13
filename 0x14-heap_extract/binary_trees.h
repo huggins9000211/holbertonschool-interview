@@ -21,6 +21,6 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
-int heap_extract(heap_t **root);
+int heap_extract(binary_tree_t **root);
 
 #endif /* LISTS_H */
