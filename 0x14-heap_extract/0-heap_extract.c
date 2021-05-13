@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "binary_trees.h"
 
 /**
@@ -90,7 +92,7 @@ int heap_extract(heap_t **root)
 		return (deleted);
 	}
     height = getHeight(*root);
-	last = getLast(height, 1, *root)
+	last = getLast(height, 1, *root);
 	if (last->parent->right)
 		last->parent->right = NULL;
 	else
