@@ -41,7 +41,7 @@ void getResult(int len, char *num1, int len1, char *num2, int len2)
 	a = (int *) malloc(sizeof(int) * len1);
 	b = (int *) malloc(sizeof(int) * len2);
 	i = 0;
-	while (i < len)
+	while (i <= len)
 	{
 		result[i] = 0;
 		i++;
@@ -62,7 +62,7 @@ void getResult(int len, char *num1, int len1, char *num2, int len2)
 		result[i] = result[i] % 10;
 		result[i + 1] = result[i + 1] + tmp;
 	}
-	for (i = len1 + len2; i >= 0; i--)
+	for (i = len1 + len2; i > 0; i--)
 	{
 		if (result[i] > 0)
 			break;
